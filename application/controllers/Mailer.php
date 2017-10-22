@@ -5,12 +5,19 @@ class Mailer extends CI_Controller{
     }
     function sendmail(){
         $this->load->library('email');
+        //$this->config->load('padimail');
+        $config['protocol'] = 'sendmail';
+        $config['mailpath'] = '/usr/sbin/sendmail';
+        $config['charset'] = 'iso-8859-1';
+        $config['wordwrap'] = false;
+        
+        $this->email->initialize($config);
         $this->email->from('puji@padi.net.id');
         $this->email->to('pw.prayitno@gmail.com');
         $this->email->subject('Test Email');
-        $this->email->message($this->welcomeusertemplate());
+        $this->email->message($this->welcomeusertemplate('Puji','pw.prayitno@gmail.com','test'));
     }
-    function welcomeusertemplate($username){
+    function welcomeusertemplate($username,$email,$password){
         $txt = 'Halo ' . $username . ' ' . PHP_EOL;
         $txt.= 'Berikut akun anda di PadiApp ' . PHP_EOL;
         $txt.= PHP_EOL;

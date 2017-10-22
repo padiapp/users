@@ -1,0 +1,22 @@
+ul#padiDropDown:empty{
+	display: none;
+}
+ul#padiDropDown{
+	background: azure;
+	border: 1px black solid;
+	color: black;
+	left:0px;
+	padding: 5px;
+	position: absolute;
+	top:50px;
+	z-index: 1000;
+}
+ul#padiDropDown li{
+	background: beige;
+	padding: 3px;
+	list-style:none;
+}
+ul#padiDropDown li.selected{
+	background: salmon;
+	padding: 3px;
+}

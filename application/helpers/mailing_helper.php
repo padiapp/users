@@ -1,9 +1,15 @@
 <?php
-function mailConfig(){
-	$ci = & get_instance();
-	$config['smtp_host']=$ci->config->item('smtp_host');
-	$config['smtp_port']='25';//instead of 465
-	$config['protocol']='smtp';
-	$config['mailtype']='html';
-	return $config;
+function setmailconfig(){
+	return array(
+		'smtp_host'=>'mail.padi.net.id',
+		'smtp_port'=>'25',
+		'protocol'=>'smtp',
+		'mailtype'=>'html',
+	);
+}
+function mailaccounts(){
+	return array(
+		'developermail' => 'PadiApp<puji@padi.net.id>',
+		'supportmail' => 'PadiApp@padi.net.id<support@padi.net.id>',	
+	);
 }

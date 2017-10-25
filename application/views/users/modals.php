@@ -46,6 +46,12 @@
                             <input type="text" class="span12" id="email" placeholder="Email User">
                             </div>
                         </div>
+                        <div class="control-group">
+                            <label class="control-label">Password </label>
+                            <div class="controls">
+                            <input type="text" class="span12" id="password" placeholder="Password User">
+                            </div>
+                        </div>
                     </fieldset>
                 </div>
             </div><!--/span-->

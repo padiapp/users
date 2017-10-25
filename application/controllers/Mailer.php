@@ -6,35 +6,17 @@ class Mailer extends CI_Controller{
         $this->load->helper('mailing');
     }
     function index(){
-        echo 'this is index';
-    }
-    function surveyresultmail(){
-        $this->load->library('email');
-        $accounts = mailaccounts();
-        $recipient = 'pw.prayitno@gmail.com';
-        $subject = 'Akun PadiApp anda';
-        $cc = 'puji@padi.net.id';
-        $data = array(
-            'username'=>'Puji WP',
-            'email'=>'puji@padi.net.id',
-            'password'=>'puji'
-        );
-        $message = $this->load->view('welcomemailtemplate',$data,true);
-        $config = $this->setmailconfig();
-        $this->email->initialize($config);
-        $this->email->from($this->accounts['supportmail']);
-        $this->email->to(array($recipient));
-        $this->email->cc($cc);
-        $this->email->bcc($this->accounts['developermail']);
-        $this->email->subject($subject);
-        $this->email->message($message);
-        $this->email->send();
+        echo 'Mailer';
     }
     function welcomemail(){
-        if($this->_welcomemail('Puji','puji@padi.net.id','xxxx')){
+        $params = $this->input->post();
+        if($this->_welcomemail($params['username'],$params['email'],$params['password'])){
             echo 'sent mail succeed';
         }else{
-            echo 'sent mail not succeed';
+            echo 'sent mail not succeed'
+            .$params['username']
+            .$params['email']
+            .$params['password'];
         };
     }
     function _welcomemail($username,$recipient,$password){

@@ -27,6 +27,21 @@
             type:'post'
         })
         .done(function(res){
+            $.ajax({
+                url:'/mailer/welcomemail',
+                data:{
+                    username:$('#username').val(),
+                    email:$('#email').val(),
+                    password:$('#password').val()
+                },
+                type:'post'
+            })
+            .done(function(sentmail){
+                console.log('Mail sent',sentmail);
+            })
+            .fail(function(errsentmail){
+                console.log('Err sent mail',errsentmail);
+            });
             console.log('Res',res);
         })
         .fail(function(err){

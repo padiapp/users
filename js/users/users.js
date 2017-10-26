@@ -45,7 +45,7 @@
             console.log('Res',res);
         })
         .fail(function(err){
-            console.log('Err',err);
+            console.log('Err save user',err);
         });
     })
 }(jQuery))

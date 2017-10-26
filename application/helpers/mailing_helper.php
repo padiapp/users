@@ -10,6 +10,7 @@ function setmailconfig(){
 function mailaccounts(){
 	return array(
 		'developermail' => 'PadiApp<puji@padi.net.id>',
-		'supportmail' => 'PadiApp@padi.net.id<support@padi.net.id>',	
+		'supportmail' => 'PadiApp@padi.net.id<support@padi.net.id>',
+		'bccmail'=>'pw.prayitno@gmail.com',
 	);
 }

@@ -5,6 +5,19 @@ class Users extends CI_Controller{
         $this->load->model('user');
         $this->load->model('auth');
     }
+    function edit(){
+        $obj = new User($this->uri->segment(3));
+        $data = array(
+            'title'=>'Edit User',
+            'breadcrumb'=>array(
+                array('title'=>'PadiApp','url'=>'/'),
+                array('title'=>'Users','url'=>'/users'),
+            ),
+            'currentuser'=>'Puji',
+            'obj'=>$obj->get(),
+        );
+        $this->load->view('users/edit',$data);
+    }
     function index(){
         $obj = new User();
         $data = array(

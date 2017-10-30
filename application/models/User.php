@@ -1,11 +1,18 @@
 <?php
 class User extends CI_Model{
     var $tablename;
-    var $email;
-    function __construct($email = ''){
+    var $id;
+    function __construct($id = ''){
         parent::__construct();
         $this->tablename = 'users';
-        $this->email = $email;
+        $this->id = $id;
+    }
+    function get(){
+        $sql = 'select id,username,email from users ';
+        $sql.= 'where id="'.$this->id.'"';
+        $ci = & get_instance();
+        $que = $ci->db->query($sql);
+        return $que->result()[0];
     }
     function gets(){
         $sql = "select id,username,email,createdate,phone ";

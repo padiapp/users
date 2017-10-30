@@ -16,11 +16,16 @@ class Users extends CI_Controller{
             'currentuser'=>'Puji',
             'obj'=>$obj->get(),
             'groups'=>$obj->getgroups(),
-            'tschecked'=>'checked="checked"',
-            'hunterchecked'=>'checked="checked"',
-            'farmerchecked'=>'checked=checked'
+            'checks'=>$this->getusergroups()
         );
         $this->load->view('users/edit',$data);
+    }
+    function getusergroups(){
+        return array(
+            'tschecked'=>'checked="checked"',
+            'hunterchecked'=>'checked="checked"',
+            'farmerchecked'=>'',
+        );
     }
     function index(){
         $obj = new User();

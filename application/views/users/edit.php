@@ -49,7 +49,7 @@
 								<label class="control-label">Divisi</label>
 								<div class="controls">
 								  <label class="checkbox inline">
-									<input type="checkbox" id="inlineCheckbox1" value="ts" <?php echo $tschecked;?> > TS
+									<input type="checkbox" id="inlineCheckbox1" value="ts" <?php echo $checks['tschecked'];?> > TS
 								  </label>
 								  <label class="checkbox inline">
 									<input type="checkbox" id="inlineCheckbox2" value="field"> Field
@@ -60,10 +60,10 @@
 								</div>
 								<div class='controls'>
 								  <label class="checkbox inline">
-									<input type="checkbox" id="inlineCheckbox1" value="hunter" <?php echo $hunterchecked;?> > Hunter
+									<input type="checkbox" id="inlineCheckbox1" value="hunter" <?php echo $checks['hunterchecked'];?> > Hunter
 								  </label>
 								  <label class="checkbox inline">
-									<input type="checkbox" id="inlineCheckbox2" value="farmer" <?php echo $farmerchecked;?> > Farmer
+									<input type="checkbox" id="inlineCheckbox2" value="farmer" <?php echo $checks['farmerchecked'];?> > Farmer
 								  </label>
 								  <label class="checkbox inline">
 									<input type="checkbox" id="inlineCheckbox3" value="cro"> CRO

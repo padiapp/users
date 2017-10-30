@@ -15,6 +15,10 @@ class Users extends CI_Controller{
             ),
             'currentuser'=>'Puji',
             'obj'=>$obj->get(),
+            'groups'=>$obj->getgroups(),
+            'tschecked'=>'checked="checked"',
+            'hunterchecked'=>'checked="checked"',
+            'farmerchecked'=>'checked=checked'
         );
         $this->load->view('users/edit',$data);
     }

@@ -31,25 +31,25 @@
 						</thead>   
 						<tbody>
 							<?php foreach($objs as $obj){?>
-						<tr>
-							<td><?php echo $obj->id;?></td>
-							<td class="center clientname"><?php echo $obj->username;?></td>
-							<td class="center"><?php echo $obj->email;?></td>
-							<td class="center">
-								<span class="label label-success <?php echo $obj->phone;?>"></span>
-							</td>
-							<td class="center">
-								<a class="btn btn-success" href="#">
-									<i class="halflings-icon white zoom-in"></i>  
-								</a>
-								<a class="btn btn-info" href="/users/edit/<?php echo $obj->id;?>">
-									<i class="halflings-icon white edit"></i>
-								</a>
-								<a class="btn btn-danger" href="#">
-									<i class="halflings-icon white trash"></i> 
-								</a>
-							</td>
-						</tr>
+							<tr>
+								<td><?php echo $obj->id;?></td>
+								<td class="center clientname"><?php echo $obj->username;?></td>
+								<td class="center"><?php echo $obj->email;?></td>
+								<td class="center">
+									<span class="label label-success <?php echo $obj->phone;?>"></span>
+								</td>
+								<td class="center">
+									<a class="btn btn-success" href="#">
+										<i class="halflings-icon white zoom-in"></i>  
+									</a>
+									<a class="btn btn-info" href="/users/edit/<?php echo $obj->id;?>">
+										<i class="halflings-icon white edit"></i>
+									</a>
+									<a class="btn btn-danger" href="#">
+										<i class="halflings-icon white trash"></i> 
+									</a>
+								</td>
+							</tr>
 							<?php }?>
 						</tbody>
 					</table>            

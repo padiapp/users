@@ -8,7 +8,7 @@ class User extends CI_Model{
         $this->id = $id;
     }
     function get(){
-        $sql = 'select id,username,email from users ';
+        $sql = 'select id,username,email,date_format(dob,"%d %m %Y") dob from users ';
         $sql.= 'where id="'.$this->id.'"';
         $ci = & get_instance();
         $que = $ci->db->query($sql);
@@ -19,6 +19,9 @@ class User extends CI_Model{
         $sql.= "from " . $this->tablename . " A ";
         $que = $this->db->query($sql);
         return $que->result();
+    }
+    function getgroups(){
+        return array('3','4');
     }
     function save($params){
         $keys = array();$vals = array();

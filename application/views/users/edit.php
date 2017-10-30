@@ -30,7 +30,7 @@
 							<div class="control-group">
 							  <label class="control-label" for="date01">Tanggal Lahir</label>
 							  <div class="controls">
-								<input type="text" class="input-xlarge datepicker" id="date01" value="02/16/12">
+								<input type="text" class="input-xlarge datepicker" id="date01" value="<?php echo $obj->dob;?>">
 							  </div>
 							</div>
 							<div class="control-group">
@@ -49,7 +49,7 @@
 								<label class="control-label">Divisi</label>
 								<div class="controls">
 								  <label class="checkbox inline">
-									<input type="checkbox" id="inlineCheckbox1" value="ts"> TS
+									<input type="checkbox" id="inlineCheckbox1" value="ts" <?php echo $tschecked;?> > TS
 								  </label>
 								  <label class="checkbox inline">
 									<input type="checkbox" id="inlineCheckbox2" value="field"> Field
@@ -60,10 +60,10 @@
 								</div>
 								<div class='controls'>
 								  <label class="checkbox inline">
-									<input type="checkbox" id="inlineCheckbox1" value="hunter"> Hunter
+									<input type="checkbox" id="inlineCheckbox1" value="hunter" <?php echo $hunterchecked;?> > Hunter
 								  </label>
 								  <label class="checkbox inline">
-									<input type="checkbox" id="inlineCheckbox2" value="farmer"> Farmer
+									<input type="checkbox" id="inlineCheckbox2" value="farmer" <?php echo $farmerchecked;?> > Farmer
 								  </label>
 								  <label class="checkbox inline">
 									<input type="checkbox" id="inlineCheckbox3" value="cro"> CRO

@@ -12,6 +12,9 @@ class Auth extends CI_Model{
     function createpassword($salt,$password){
         return (sha1($salt.$password));
     }
+    function generatepassword(){
+        return random_string('alnum',5);
+    }
     function login($email,$password){
         $sql = 'select email,password2,salt from users ';
         $sql.= 'where email="'.$email.'" ';

@@ -1,9 +1,11 @@
 <?php
 class User extends CI_Model{
     var $tablename;
-    function __construct(){
+    var $email;
+    function __construct($email = ''){
         parent::__construct();
         $this->tablename = 'users';
+        $this->email = $email;
     }
     function gets(){
         $sql = "select id,username,email,createdate,phone ";
@@ -24,5 +26,17 @@ class User extends CI_Model{
         $sql.= "('".implode("','",$vals)."') ";
         $ci->db->query($sql);
         return $ci->db->insert_id();
+    }
+    function update($params){
+        $arr = array();
+        foreach($params as $key=>$val){
+            array_push($arr,''.$key.'="'.$val.'"');
+        }
+        $sql = 'update users set ';
+        $sql.= implode(',',$arr);
+        $sql.= 'where email="'.$params['email'].'" ';
+        $ci = & get_instance();
+        $ci->db->query($sql);
+        return $sql;
     }
 }
